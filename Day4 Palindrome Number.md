@@ -47,3 +47,5 @@ original = String(x)
 reverse = original.split('').reverse().join('')
 return original === reverse ? true :false
 ```
+
+- 중요한 사실! 배열과 배열이 동일한지 직접 비교할 수 없다.
