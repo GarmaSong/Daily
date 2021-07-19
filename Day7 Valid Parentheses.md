@@ -51,6 +51,36 @@ else return true
 
 ```
 
+# 예외처리를 위한 시도(하지만 실패)
+
+- 용용님의 도움으로 예외처리를 시도하였으나 역시나 로직의 오류 때문에 다른 테스트 케이스의 오류를 발견하였다...! 그래도 도와줘서 쏘 땡큐
+
+```
+const resultPrint = (s) => {
+  let result = false
+const condition1= (s.indexOf('(') + s.indexOf(')')) % 2 === 1
+const condition2= (s.indexOf('{') + s.indexOf('}')) % 2 === 1
+const condition3= (s.indexOf('[') + s.indexOf(']')) %2 === 1
+
+
+if(condition1 && condition2 && condition3)
+{result = true} else
+if(condition1 && condition2)
+{result = true} else
+if(condition1 && condition3)
+{result = true} else
+if(condition2 && condition3)
+{result = true} else
+if(condition1)
+  {result = true} else
+if(condition2)
+  {result = true} else
+if(condition3)
+  {result = true}
+  return result
+}
+```
+
 # 🕺 설명
 
 - 일단 허점이 많음을 인지하고 있다.
