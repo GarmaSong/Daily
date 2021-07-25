@@ -66,7 +66,7 @@ return Object.keys(result).length;
 - 둘이 같지 않으면 일단 i의 값을 하나 증가 시키고(인덱스의 값 증가) nums[j]의 값을 nums[i]에 할당해준다.
 - 그리고 마지막으로 j도 1씩 증가시켜준다.
 - 만약 둘이 같은 경우에는 j만 증가시켜 비교시켜준다.
-  ![](https://images.velog.io/images/sgr2134/post/e3d089be-6317-412d-800d-93d11bf95679/image.png)
+- ![](https://images.velog.io/images/sgr2134/post/e3d089be-6317-412d-800d-93d11bf95679/image.png)
 
 # 해답 중 하나
 
