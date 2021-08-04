@@ -38,3 +38,37 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
 
 - 풀이를 보고 이해하는건 이진탐색을 위해 중간을 자른것까지밖에 이해를 하지 못했다.
 - 그러기도 하고 스스로 풀어보고 싶기도 해서 오늘 고민해보고 내일 다시 돌아오겠다..
+
+#### 내가 생각했던 풀이(틀림 주의..)
+
+```
+var mySqrt = function(x) {
+1)  const arr = [];
+    const power = [];
+
+    for (let i =1; i<=x; i++){
+      arr.push(i);
+      power.push(i*i);
+    }
+
+2) let mid = Math.floor(power.length/2);
+
+3) while(power[mid]>x){
+  power.splice(mid, mid);
+  mid = Math.floor(power.length/2);
+}
+
+4) return arr[mid]
+
+};
+
+```
+
+아.. 이번에는 정말 노력했으나 잘 되지 않았다.. 조금 아쉬운 마음도 있지만, 너무 머리가 아프기 때문에 일단 내가 푼 방법을 업데이트 하고 조만간 더 연구를하거나 해답을 보고 이해할 예정
+
+1. 로직의 그림자료와 같이 비교하기 위해 x값이 들어왔을 때 1부터 x까지의 수를 arr라는 배열에 제곱한 수들의 모음인 power를 만들어 주었고 안에 값들을 넣었다.
+2. 하하 이진탐색법을 배웠다고 또 써보고 싶으니까 mid라는 변수를 설정해서 배열 길이의 반씩 잘라나갈 예정...
+3. 반씩 잘려나갔을 때의 값과 비교해서 x가 더 큰값이 나올때까지 계속 잘라주고 mid를 업뎃해줌
+4. 자를대로 잘려 결국 x가 중간값보다 커지면 마지막 mid를 인덱스로 하는 arr의 값을 반환해준다..
+
+! 근데 틀림,,, 하지만 아침부터 너무 오랜 시간을 잡고 있어서 내일 다시보자 이자식,,
