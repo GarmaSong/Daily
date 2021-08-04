@@ -32,7 +32,7 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
 
 - 약간 신셰계였는데 이진탐색법을 이용해서 제곱이 된 수들 중에서 인자로 들어온 x와 비교해서 위치를 알아내는 방법인것 같다..
   ![](https://images.velog.io/images/sgr2134/post/aef48e7d-3663-403f-bcf0-c18305690eea/image.png)
-- 요런 느낌쓰
+- 인자로 8이 들어오고 제곱근을 구하는 방식은 요런 느낌쓰
 
 # 풀이
 
