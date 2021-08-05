@@ -32,7 +32,7 @@ Explanation: The square root of 8 is 2.82842..., and since the decimal part is t
 
 - 약간 신셰계였는데 이진탐색법을 이용해서 제곱이 된 수들 중에서 인자로 들어온 x와 비교해서 위치를 알아내는 방법인것 같다..
   ![](https://images.velog.io/images/sgr2134/post/aef48e7d-3663-403f-bcf0-c18305690eea/image.png)
-- 인자로 8이 들어오고 제곱근을 구하는 방식은 요런 느낌쓰
+- 요런 느낌쓰
 
 # 풀이
 
@@ -71,4 +71,31 @@ var mySqrt = function(x) {
 3. 반씩 잘려나갔을 때의 값과 비교해서 x가 더 큰값이 나올때까지 계속 잘라주고 mid를 업뎃해줌
 4. 자를대로 잘려 결국 x가 중간값보다 커지면 마지막 mid를 인덱스로 하는 arr의 값을 반환해준다..
 
-! 근데 틀림,,, 하지만 아침부터 너무 오랜 시간을 잡고 있어서 내일 다시보자 이자식,,
+#### 해답풀이 👏
+
+```
+var mySqrt = function(x) {
+    let left = 1;
+1)    let right = x;
+    if(x < 2) return x;
+
+
+2)    while(left < right) {
+        const mid = Math.floor((left + right) / 2)
+3)        if(mid*mid === x) return mid
+4)        else if(mid*mid >x) right = mid
+5)        else left = mid+1
+    }
+    return left - 1
+};
+```
+
+너무나도 깔끔하게 느껴지는 해답.. 접근방법은 비슷했던 것 같지만, 제곱근을 구하기 위해서 인자x까지의 모든 수들을 나열한 반면 해답은 그냥 수 자체로만 비교한 느낌..
+인간인 나는 모든 수들이 나열되고 찾아야 한다고 생각했지만 사실상 컴퓨터에게 그런건 필요없는 과정이었던 것으로 보인다. 참고 블로그: [Squrt(x)](https://dev.to/cod3pineapple/69-sqrt-x-javascript-solution-1hn0)
+
+1. 0과 1은 제곱근으로 자신을 반환하기에 예외처리를 해준다.
+2. 일단 이진탐색을 이용하고, right가 left보다 클때까지 반복문을 돌려준다. 중간을 기준으로 자르기 때문에 변수 이름을 mid라고 설정하고 left와 rigit 합을 반으로 나눈값으로 계속 업데이트 시켜준다.
+3. 만약 반으로 잘랐는데 그것의 제곱이 들어온 인자와 같다면 반이 제곱근이 되는것이기에 mid를 반환하면 된다.
+4. 만약 mid를 제곱한게 인자인 x보다 크면 범위를 작게 좁혀야 하기에 right값을 mid에 할당해준다.
+5. 그렇게 반복하다가 right가 left보다 작아지기 직전에서는 mid값에 1을 더해준다.
+   그러고 반환을 할때는 left -1을 해주는데 이게 그냥 해보면 아는데 설명하기가 어렵네;
