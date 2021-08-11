@@ -11,3 +11,24 @@ Example 2:
 Input: head = [1,1,2,3,3]
 Output: [1,2,3]
 ```
+
+# solution
+
+```
+var deleteDuplicates = function(head) {
+    // if(head.length <= 1){
+    //     return head
+    // }
+let current = head;
+
+  while (current !== null && current.next !== null) {
+    if (current.val === current.next.val) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+
+  return head;
+};
+```
